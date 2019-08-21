@@ -11,8 +11,5 @@
     "url": "https://github.com/benhide/HTML5-Canvas-Example.git"
   },
   "author": "Ben Hide",
-  "license": "MIT",
-  "dependencies": {
-    "modernizr": "^3.7.1"
-  }
+  "license": "MIT"
 }
