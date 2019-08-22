@@ -1,6 +1,12 @@
 const canvas = document.getElementById("canvas");
 const context = canvas.getContext("2d");
 
+const width = canvas.width;
+const height = canvas.height;
+const centerX = width / 2;
+const centerY = height / 2;
+const radius = width / 3;
+
 // context.fillStyle = "Green";
 // context.fillRect(200, 150, 200, 100);
 // context.arc(100, 100, 50, 0, 2 * Math.PI, false);
@@ -98,4 +104,99 @@ const context = canvas.getContext("2d");
 // }
 // generateImage();
 
+// window.requestAnimFrame = (function() {
+//   return (
+//     window.requestAnimationFrame ||
+//     window.webkitRequestAnimationFrame ||
+//     window.mozRequestAnimationFrame ||
+//     window.oRequestAnimationFrame ||
+//     window.msRequestAnimationFrame ||
+//     function(callback) {
+//       window.setTimeout(callback, 1000 / 60);
+//     }
+//   );
+// })();
+// const radius = 50;
+// const posY = 70;
+// let posX = radius;
+// const speed = 8;
+// const width = canvas.width;
+// const height = canvas.height;
+// let dir = 1;
+// function update() {
+//   if (dir > 0) dir = posX < width - radius ? 1 : -1;
+//   if (dir < 0) dir = posX > 0 + radius ? -1 : 1;
+//   posX += speed * dir;
+// }
+// function render() {
+//   context.clearRect(0, 0, width, height);
+//   context.fillStyle = "Navy";
+//   context.beginPath();
+//   context.arc(posX, posY, radius, 0, 2 * Math.PI, false);
+//   context.closePath();
+//   context.fill();
+// }
+// function animate() {
+//   update();
+//   render();
+//   requestAnimFrame(animate);
+// }
+// animate();
 
+// const borderColor = "#c8c8c8";
+// const innerBorderColor = "#c8c8c8";
+// const handColor = "#666666";
+// drawClockFace();
+// drawHand();
+// function drawHand() {
+//   let radians = (new Date().getSeconds() * Math.PI) / 30;
+//   radians -= (90 * Math.PI) / 180;
+//   context.beginPath();
+//   const gradient = context.createRadialGradient(
+//     centerX,
+//     centerY,
+//     radius / 1.3,
+//     70,
+//     50,
+//     radius / 4
+//   );
+//   gradient.addColorStop(0, "#88bfe8");
+//   gradient.addColorStop(1, "#fff");
+//   context.fillStyle = gradient;
+//   context.arc(centerX, centerY, radius - 10, 0, 2 * Math.PI, false);
+//   context.fill();
+//   context.strokeStyle = innerBorderColor;
+//   context.stroke();
+//   context.closePath();
+//   context.save();
+//   context.beginPath();
+//   context.translate(centerX, centerY);
+//   context.rotate(radians);
+//   context.lineWidth = 2;
+//   context.lineCap = "round";
+//   context.moveTo(0, 0);
+//   context.lineTo(radius - 25, 0);
+//   context.strokeStyle = handColor;
+//   context.stroke();
+//   context.closePath();
+//   context.restore();
+// }
+// function drawClockFace() {
+//   context.beginPath();
+//   context.strokeStyle = borderColor;
+//   context.arc(centerX, centerY, radius, 0, 2 * Math.PI, false);
+//   const gradient = context.createRadialGradient(
+//     centerX,
+//     centerY,
+//     radius,
+//     100,
+//     50,
+//     radius / 2
+//   );
+//   gradient.addColorStop(0, "#ccc");
+//   gradient.addColorStop(1, "#fff");
+//   context.fillStyle = gradient;
+//   context.fill();
+//   context.stroke();
+//   context.closePath();
+// }
