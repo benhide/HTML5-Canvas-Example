@@ -13,6 +13,6 @@
   "author": "Ben Hide",
   "license": "MIT",
   "dependencies": {
-    "lodash": "^4.17.0"
+    "lodash": "^4.17.19"
   }
 }
